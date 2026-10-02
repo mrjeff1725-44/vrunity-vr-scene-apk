@@ -1,0 +1,24 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+  <uses-feature android:name="android.hardware.vr.headtracking" android:version="1" android:required="false" />
+  <uses-feature android:name="android.hardware.sensor.gyroscope" android:required="false" />
+  <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="false" />
+  <application
+      android:label="VR Scene"
+      android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+      android:hardwareAccelerated="true"
+      android:allowBackup="false">
+    <activity
+        android:name=".MainActivity"
+        android:exported="true"
+        android:screenOrientation="landscape"
+        android:launchMode="singleTask"
+        android:configChanges="orientation|screenSize|keyboardHidden|screenLayout">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+        <category android:name="com.oculus.intent.category.VR" />
+        <category android:name="com.google.intent.category.CARDBOARD" />
+      </intent-filter>
+    </activity>
+  </application>
+</manifest>
